@@ -1,5 +1,5 @@
 import os, re, requests
-from .prompts import SYSTEM_PROMPT
+from prompts import SYSTEM_PROMPT
 
 AIPIPE_ENDPOINT = os.getenv("AIPIPE_ENDPOINT", "https://aipipe.org/openrouter/v1/chat/completions")
 AIPIPE_API_KEY = os.getenv("AIPIPE_API_KEY")
@@ -33,3 +33,4 @@ def generate_code_from_llm(user_prompt: str) -> str:
     # Extract Python code if wrapped in ```python ... ```
     match = re.search(r"```python\s*(.*?)```", raw_output, re.DOTALL)
     return match.group(1).strip() if match else raw_output.strip()
+
