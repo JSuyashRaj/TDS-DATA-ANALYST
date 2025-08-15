@@ -2,8 +2,8 @@ from fastapi import FastAPI, Body
 from fastapi.responses import JSONResponse
 import os
 
-from .llm_client import generate_code_from_llm
-from .code_runner import run_generated_code
+from llm_client import generate_code_from_llm
+from code_runner import run_generated_code
 
 app = FastAPI(title="Simple Data Analyst Agent", version="1.2")
 
@@ -64,3 +64,4 @@ async def run_from_body(question: str = Body(None, description="Your question fo
         return JSONResponse({"error": "Question is empty"}, status_code=400)
 
     return JSONResponse(process_question(question))
+
