@@ -1,3 +1,7 @@
+pip>=25.2
+wheel
+setuptools
+
 fastapi==0.115.0
 uvicorn==0.30.6
 python-multipart==0.0.9
@@ -10,3 +14,4 @@ numpy==1.26.4
 beautifulsoup4==4.12.3
 lxml==5.3.0
 matplotlib==3.9.1
+
