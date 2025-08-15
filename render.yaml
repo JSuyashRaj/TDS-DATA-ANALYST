@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: data-analyst-agent
+    env: python
+    plan: free
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: AIPIPE_API_KEY
+        sync: false
+      - key: AIPIPE_ENDPOINT
+        value: https://aipipe.org/openrouter/v1/chat/completions
+      - key: LLM_MODEL
+        value: openai/gpt-4o-mini
