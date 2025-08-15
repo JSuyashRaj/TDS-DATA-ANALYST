@@ -1,0 +1,8 @@
+# Ignore directories
+# Python environment
+venv/
+__pycache__/
+*.pyc
+
+# API secrets
+.env
